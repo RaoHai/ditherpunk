@@ -2,7 +2,7 @@
 
 **A tiny, offline pixel darkroom. Less color. More character.**
 
-Ditherpunk turns images and iconic images and archival photography into two-color pixel art. A single HTML file, no build step, no runtime dependencies, no uploads, no analytics.
+Ditherpunk turns images and classic artworks and iconic imagery into two-color pixel art. A single HTML file, no build step, no runtime dependencies, no uploads, no analytics.
 
 [Live demo](https://raohai.github.io/ditherpunk/) · [Download index.html](https://github.com/RaoHai/ditherpunk/releases/latest)
 
@@ -10,7 +10,7 @@ Ditherpunk turns images and iconic images and archival photography into two-colo
 
 像素风格的本地点阵暗房。下载 `index.html` 后双击即可使用。
 
-- 8 张鲜明图像：神奈川冲浪里、赤富士、蓝色弹珠、月面宇航员、月球脚印、地出、土星之环、哥伦比亚号升空。作者及来源在界面中标注。
+- 8 张精选图像：神奈川冲浪里、赤富士、土星之环、西斯莱《维勒讷夫拉加雷讷的桥》、毕沙罗《蓬图瓦兹的雅莱山》、梵高《柏树》、马尔克《虎》（木刻）、石涛《四季山水册》选页。作者、流派和来源在界面中标注。
 - Bayer 2/4/8、近似蓝噪声、Floyd–Steinberg、Atkinson、白噪声、阈值，共 8 种算法。
 - 1–16px 细胞、亮度、对比度、线性空间、8 套双色油墨和自定义颜色。
 - 文件上传、拖放、粘贴图片。支持浏览器能够解码的图片格式。
@@ -35,7 +35,7 @@ Open `index.html` directly, or serve this directory:
 python -m http.server 8000
 ```
 
-Everything is processed locally. The GitHub links navigate externally only when clicked. Two Hokusai prints from The Met and six archival NASA images are embedded in the HTML. No image request or external font is needed at runtime. See [ARTWORKS.md](ARTWORKS.md) for the original titles, artists, collection records, image sources, and their respective usage terms.
+Everything is processed locally. The GitHub links navigate externally only when clicked. Seven artworks from The Met and the Cleveland Museum of Art, plus one NASA Cassini image, are embedded in the HTML. No image request or external font is needed at runtime. See [ARTWORKS.md](ARTWORKS.md) for the original titles, artists, collection records, image sources, and their respective usage terms.
 
 ## Implementation
 
@@ -62,4 +62,4 @@ Tests exercise all scenes and algorithms, 1px/partial edge cells, image import, 
 
 ## License
 
-Application code: MIT. The Met reproductions: CC0. NASA archival images: NASA media usage guidelines. Full attribution and usage terms are documented in [ARTWORKS.md](ARTWORKS.md). Images you import retain their original rights.
+Application code: MIT. The Met and Cleveland Museum of Art reproductions: CC0. NASA archival images: NASA media usage guidelines. Full attribution and usage terms are documented in [ARTWORKS.md](ARTWORKS.md). Images you import retain their original rights.
