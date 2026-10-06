@@ -2,7 +2,7 @@
 
 **A tiny, offline pixel darkroom. Less color. More character.**
 
-Ditherpunk turns images and original procedural landscapes into two-color pixel art. A single HTML file, no build step, no runtime dependencies, no uploads, no analytics.
+Ditherpunk turns images and classic public-domain paintings into two-color pixel art. A single HTML file, no build step, no runtime dependencies, no uploads, no analytics.
 
 [Live demo](https://raohai.github.io/ditherpunk/) · [Download index.html](https://github.com/RaoHai/ditherpunk/releases/latest)
 
@@ -10,7 +10,7 @@ Ditherpunk turns images and original procedural landscapes into two-color pixel 
 
 像素风格的本地点阵暗房。下载 `index.html` 后双击即可使用。
 
-- 8 幅原创程序风景：山湖余晖、富士春晓、沙海落日、海角灯塔、极光之夜、雾隐松林、雨后都市、月球来信。
+- 8 幅经典馆藏：《神奈川冲浪里》《麦田与柏树》《牛轭湖》《落基山脉：兰德峰》、透纳的威尼斯风景、《采摘橄榄的妇女》《阿让特伊花园中的莫奈一家》《秋千》。作者和博物馆来源在界面中标注。
 - Bayer 2/4/8、近似蓝噪声、Floyd–Steinberg、Atkinson、白噪声、阈值，共 8 种算法。
 - 1–16px 细胞、亮度、对比度、线性空间、8 套双色油墨和自定义颜色。
 - 文件上传、拖放、粘贴图片。支持浏览器能够解码的图片格式。
@@ -35,7 +35,7 @@ Open `index.html` directly, or serve this directory:
 python -m http.server 8000
 ```
 
-Everything is processed locally. The GitHub links navigate externally only when clicked. The illustrations are generated from deterministic seeds; no downloaded photos, fonts, or asset services are required.
+Everything is processed locally. The GitHub links navigate externally only when clicked. Eight public-domain painting reproductions from The Metropolitan Museum of Art are embedded in the HTML. No image request or external font is needed at runtime. See [ARTWORKS.md](ARTWORKS.md) for the original titles, artists, collection records, image sources, and CC0 attribution.
 
 ## Implementation
 
@@ -62,4 +62,4 @@ Tests exercise all scenes and algorithms, 1px/partial edge cells, image import, 
 
 ## License
 
-MIT. The code and eight procedural landscape illustrations are included under the same license. Images you import retain their original rights.
+Application code: MIT. Museum painting reproductions: CC0 / public domain, as documented in [ARTWORKS.md](ARTWORKS.md). Images you import retain their original rights.
