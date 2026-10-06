@@ -1,6 +1,7 @@
 const assert=require('node:assert/strict');
 const {chromium}=require('playwright');
 const path=require('node:path');
+const digest=value=>require('node:crypto').createHash('sha256').update(value).digest('hex');
 const {pathToFileURL}=require('node:url');
 const url=pathToFileURL(path.resolve(__dirname,'../index.html')).href;
 (async()=>{
@@ -17,9 +18,10 @@ const url=pathToFileURL(path.resolve(__dirname,'../index.html')).href;
   // Only the language selector's native-language option should contain Chinese in English UI.
   const chinese=await page.evaluate(()=>{const copy=document.body.cloneNode(true);copy.querySelectorAll('script,style,#language').forEach(n=>n.remove());return (copy.textContent.match(/[\u3400-\u9fff]+/g)||[]);});assert.deepEqual(chinese,[]);
   await page.locator('#cell').fill('7');await page.locator('#cell').dispatchEvent('input');await page.waitForFunction(()=>document.getElementById('cellValue').textContent==='7 PX');
-  const pixels=await page.evaluate(()=>rendered.canvas.toDataURL());
+  await page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+  const pixels=digest(await page.evaluate(()=>rendered.canvas.toDataURL()));
   await page.locator('#language').selectOption('zh');assert.equal(await page.locator('#reset').innerText(),'重置');assert.match(await page.locator('#sceneName').innerText(),/神奈川/);
-  assert.equal(await page.locator('#cell').inputValue(),'7');assert.equal(await page.evaluate(()=>rendered.canvas.toDataURL()),pixels);
+  assert.equal(await page.locator('#cell').inputValue(),'7');assert.equal(digest(await page.evaluate(()=>rendered.canvas.toDataURL())),pixels);
   await page.locator('summary').first().click();await page.locator('#measurement').fill('bad json');await page.locator('#applyMeasurement').click();assert.match(await page.locator('#status').innerText(),/请输入有效的 JSON/);
   await page.locator('#language').selectOption('en');assert.equal(await page.locator('#status').innerText(),'Cannot apply: Enter valid JSON');
   await page.locator('#measurement').fill('{"width":516,"height":290.109375,"y":394.671875,"dpr":1}');await page.locator('#applyMeasurement').click();assert.match(await page.locator('#calibration').innerText(),/Fractional device-pixel/);
