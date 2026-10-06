@@ -2,7 +2,7 @@
 
 **A tiny, offline pixel darkroom. Less color. More character.**
 
-Ditherpunk turns images and classic public-domain paintings into two-color pixel art. A single HTML file, no build step, no runtime dependencies, no uploads, no analytics.
+Ditherpunk turns images and iconic images and archival photography into two-color pixel art. A single HTML file, no build step, no runtime dependencies, no uploads, no analytics.
 
 [Live demo](https://raohai.github.io/ditherpunk/) · [Download index.html](https://github.com/RaoHai/ditherpunk/releases/latest)
 
@@ -10,7 +10,7 @@ Ditherpunk turns images and classic public-domain paintings into two-color pixel
 
 像素风格的本地点阵暗房。下载 `index.html` 后双击即可使用。
 
-- 8 幅经典馆藏：《神奈川冲浪里》《麦田与柏树》《牛轭湖》《落基山脉：兰德峰》、透纳的威尼斯风景、《采摘橄榄的妇女》《阿让特伊花园中的莫奈一家》《秋千》。作者和博物馆来源在界面中标注。
+- 8 张鲜明图像：神奈川冲浪里、赤富士、蓝色弹珠、月面宇航员、月球脚印、地出、土星之环、哥伦比亚号升空。作者及来源在界面中标注。
 - Bayer 2/4/8、近似蓝噪声、Floyd–Steinberg、Atkinson、白噪声、阈值，共 8 种算法。
 - 1–16px 细胞、亮度、对比度、线性空间、8 套双色油墨和自定义颜色。
 - 文件上传、拖放、粘贴图片。支持浏览器能够解码的图片格式。
@@ -35,11 +35,11 @@ Open `index.html` directly, or serve this directory:
 python -m http.server 8000
 ```
 
-Everything is processed locally. The GitHub links navigate externally only when clicked. Eight public-domain painting reproductions from The Metropolitan Museum of Art are embedded in the HTML. No image request or external font is needed at runtime. See [ARTWORKS.md](ARTWORKS.md) for the original titles, artists, collection records, image sources, and CC0 attribution.
+Everything is processed locally. The GitHub links navigate externally only when clicked. Two Hokusai prints from The Met and six archival NASA images are embedded in the HTML. No image request or external font is needed at runtime. See [ARTWORKS.md](ARTWORKS.md) for the original titles, artists, collection records, image sources, and their respective usage terms.
 
 ## Implementation
 
-- Center-crop and resample the source once, then compute cell luminance and dither at the **final export resolution**.
+- Fit the complete subject or center-crop, and resample the source once, then compute cell luminance and dither at the **final export resolution**.
 - Edge cells can be partial. Atkinson uses its six-neighbor 1/8 error kernel.
 - The blue-noise option is a ranked high-pass random tile, an approximation rather than a full void-and-cluster construction.
 - Encode a two-entry PNG palette, 1-bit pixel rows, CRC-32 chunks, and zlib-compressed IDAT via `CompressionStream`.
@@ -62,4 +62,4 @@ Tests exercise all scenes and algorithms, 1px/partial edge cells, image import, 
 
 ## License
 
-Application code: MIT. Museum painting reproductions: CC0 / public domain, as documented in [ARTWORKS.md](ARTWORKS.md). Images you import retain their original rights.
+Application code: MIT. The Met reproductions: CC0. NASA archival images: NASA media usage guidelines. Full attribution and usage terms are documented in [ARTWORKS.md](ARTWORKS.md). Images you import retain their original rights.

@@ -1,16 +1,73 @@
-# Artwork sources
+# Image sources
 
-These eight embedded reproductions come from The Metropolitan Museum of Art Open Access collection. The API reported `isPublicDomain: true` for each object at retrieval. Images are CC0; the MIT license applies to the application code, not a new claim of authorship over the paintings.
+The library keeps Hokusai’s Great Wave and adds images with distinct silhouettes and strong figure/ground separation. Original source files are embedded unchanged; dithering and optional cropping happen locally.
 
-[The Met Open Access](https://www.metmuseum.org/about-the-met/policies-and-documents/open-access) · [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+Application code is MIT licensed. This license does not relicense the source photographs or artworks. Each source has its own usage terms. No NASA endorsement is implied.
 
-Images are embedded unchanged from the museum’s web-large JPEG rendition. Library thumbnails fit the complete painting; the working canvas uses the chosen center crop.
+- The Met: public-domain artwork reproductions released under [CC0](https://www.metmuseum.org/hubs/open-access). API records reported `isPublicDomain: true`.
+- NASA: archival images used as attributed examples under [NASA media usage guidelines](https://www.nasa.gov/nasa-brand-center/images-and-media/). These are not labeled CC0. NASA imagery is generally not subject to copyright in the United States; agency identifiers, endorsement and third-party rights have separate conditions.
 
-- **Under the Wave off Kanagawa (Kanagawa oki nami ura), also known as The Great Wave, from the series Thirty-six Views of Mount Fuji (Fugaku sanjūrokkei)** — 葛饰北斋, ca. 1830–32. [Collection record](https://www.metmuseum.org/art/collection/search/45434) · [Image source](https://images.metmuseum.org/CRDImages/as/web-large/DP130155.jpg).
-- **Wheat Field with Cypresses** — 文森特·梵高, 1889. [Collection record](https://www.metmuseum.org/art/collection/search/436535) · [Image source](https://images.metmuseum.org/CRDImages/ep/web-large/DP-42549-001.jpg).
-- **View from Mount Holyoke, Northampton, Massachusetts, after a Thunderstorm—The Oxbow** — 托马斯·科尔, 1836. [Collection record](https://www.metmuseum.org/art/collection/search/10497) · [Image source](https://images.metmuseum.org/CRDImages/ad/web-large/DP-12550-001.jpg).
-- **The Rocky Mountains, Lander's Peak** — 阿尔伯特·比尔施塔特, 1863. [Collection record](https://www.metmuseum.org/art/collection/search/10154) · [Image source](https://images.metmuseum.org/CRDImages/ad/web-large/DT82.jpg).
-- **Venice, from the Porch of Madonna della Salute** — J. M. W. 透纳, ca. 1835. [Collection record](https://www.metmuseum.org/art/collection/search/437853) · [Image source](https://images.metmuseum.org/CRDImages/ep/web-large/DP169568.jpg).
-- **Women Picking Olives** — 文森特·梵高, 1889. [Collection record](https://www.metmuseum.org/art/collection/search/436536) · [Image source](https://images.metmuseum.org/CRDImages/ep/web-large/DP-17161-001.jpg).
-- **The Monet Family in Their Garden at Argenteuil** — 爱德华·马奈, 1874. [Collection record](https://www.metmuseum.org/art/collection/search/436965) · [Image source](https://images.metmuseum.org/CRDImages/ep/web-large/DP-25465-001.jpg).
-- **The Swing** — 于贝尔·罗贝尔, 1777–79. [Collection record](https://www.metmuseum.org/art/collection/search/437480) · [Image source](https://images.metmuseum.org/CRDImages/ep/web-large/DP164797.jpg).
+## 神奈川冲浪里
+
+Under the Wave off Kanagawa (Kanagawa oki nami ura), also known as The Great Wave, from the series Thirty-six Views of Mount Fuji (Fugaku sanjūrokkei) — 葛饰北斋, ca. 1830–32.
+
+[Source record](https://www.metmuseum.org/art/collection/search/45434) · [Original rendition](https://images.metmuseum.org/CRDImages/as/web-large/DP130155.jpg)
+
+Usage: CC0.
+
+## 凯风快晴 · 赤富士
+
+South Wind, Clear Sky (Gaifū kaisei), also known as Red Fuji, from the series Thirty-six Views of Mount Fuji (Fugaku sanjūrokkei) — 葛饰北斋, ca. 1830–32.
+
+[Source record](https://www.metmuseum.org/art/collection/search/36490) · [Original rendition](https://images.metmuseum.org/CRDImages/as/web-large/DP141062.jpg)
+
+Usage: CC0.
+
+## 蓝色弹珠
+
+View of the Earth seen by the Apollo 17 crew traveling toward the moon — NASA · Apollo 17, 1972.
+
+[Source record](https://images.nasa.gov/details/as17-148-22727) · [Original rendition](https://images-assets.nasa.gov/image/as17-148-22727/as17-148-22727~medium.jpg)
+
+Usage: NASA media usage guidelines.
+
+## 月面宇航员
+
+Astronaut Edwin Aldrin walks on lunar surface near leg of Lunar Module — NASA · Neil Armstrong, 1969.
+
+[Source record](https://images.nasa.gov/details/as11-40-5903) · [Original rendition](https://images-assets.nasa.gov/image/as11-40-5903/as11-40-5903~medium.jpg)
+
+Usage: NASA media usage guidelines.
+
+## 月球脚印
+
+Apollo 11 Mission image - Astronaut bootprint on the lunar surface — NASA · Apollo 11, 1969.
+
+[Source record](https://images.nasa.gov/details/as11-40-5877) · [Original rendition](https://images-assets.nasa.gov/image/as11-40-5877/as11-40-5877~medium.jpg)
+
+Usage: NASA media usage guidelines.
+
+## 地出
+
+Apollo 8 Mission image, Earth over the horizon of the moon — NASA · Apollo 8, 1968.
+
+[Source record](https://images.nasa.gov/details/as08-14-2383) · [Original rendition](https://images-assets.nasa.gov/image/as08-14-2383/as08-14-2383~medium.jpg)
+
+Usage: NASA media usage guidelines.
+
+## 土星之环
+
+The Day the Earth Smiled — NASA/JPL-Caltech/SSI, 2013.
+
+[Source record](https://images.nasa.gov/details/PIA17172) · [Original rendition](https://images-assets.nasa.gov/image/PIA17172/PIA17172~medium.jpg)
+
+Usage: NASA media usage guidelines.
+
+## 哥伦比亚号升空
+
+STS-1 - LAUNCH - KSC — NASA, 1981.
+
+[Source record](https://images.nasa.gov/details/S81-30500) · [Original rendition](https://images-assets.nasa.gov/image/S81-30500/S81-30500~medium.jpg)
+
+Usage: NASA media usage guidelines.
+
