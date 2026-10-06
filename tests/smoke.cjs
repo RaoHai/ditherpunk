@@ -13,8 +13,8 @@ function decodePNG(buf){
 (async()=>{
  const browser=await chromium.launch({headless:true});
  try{
- const page=await browser.newPage({viewport:{width:1440,height:1100}}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(pathToFileURL(path.resolve(__dirname,'../index.html')).href);await page.waitForFunction(()=>typeof rendered!=='undefined'&&!!rendered);
- assert.equal(await page.locator('.scene').count(),8);assert.equal(await page.locator('#imageInfo').textContent(),'516 × 290 / 2 COLORS');
+ const page=await browser.newPage({viewport:{width:1440,height:1100},locale:'zh-CN'}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(pathToFileURL(path.resolve(__dirname,'../index.html')).href);await page.waitForFunction(()=>typeof rendered!=='undefined'&&!!rendered);
+ assert.equal(await page.locator('.scene').count(),8);assert.equal(await page.locator('#imageInfo').textContent(),'516 × 290 / 双色');
  const report=await page.evaluate(async()=>{
   const hashes=[];
   for(let i=0;i<SCENES.length;i++){await chooseScene(i);let bytes=rendered.canvas.getContext('2d').getImageData(0,0,rendered.w,rendered.h).data;let hash=0;for(let j=0;j<bytes.length;j+=4)hash=Math.imul(hash,31)+bytes[j]|0;hashes.push(hash);}

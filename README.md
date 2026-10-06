@@ -1,6 +1,6 @@
 # Ditherpunk
 
-**A tiny, offline pixel darkroom. Less color. More character.**
+**Offline image dithering with lossless PNG export.**
 
 Ditherpunk turns images and classic artworks and iconic imagery into two-color pixel art. A single HTML file, no build step, no runtime dependencies, no uploads, no analytics.
 
@@ -8,7 +8,7 @@ Ditherpunk turns images and classic artworks and iconic imagery into two-color p
 
 ## 中文
 
-像素风格的本地点阵暗房。下载 `index.html` 后双击即可使用。
+本地点阵图像工具。下载 `index.html` 后双击即可使用。右上角支持中英文切换，首次访问跟随浏览器语言，手动选择后记住偏好。
 
 - 8 张精选图像：神奈川冲浪里、赤富士、土星之环、西斯莱《维勒讷夫拉加雷讷的桥》、毕沙罗《蓬图瓦兹的雅莱山》、梵高《柏树》、马尔克《虎》（木刻）、石涛《四季山水册》选页。作者、流派和来源在界面中标注。
 - Bayer 2/4/8、近似蓝噪声、Floyd–Steinberg、Atkinson、白噪声、阈值，共 8 种算法。
@@ -46,7 +46,7 @@ Everything is processed locally. The GitHub links navigate externally only when 
 - Browsers without `CompressionStream` use valid stored DEFLATE blocks; the file is larger but still indexed and lossless.
 - Input limit: 30 MB / 40 million decoded pixels. Output limit: 16,777,216 pixels and 8192 per side. Large images can take longer because processing runs on the main thread.
 
-The interface is in Chinese, with English section labels. Recent Chromium, Firefox, and Safari are the target browsers; automated verification currently uses Chromium.
+The interface supports Chinese and English. It follows the browser language on first visit (Chinese for zh locales, English otherwise); the header language selector saves your preference locally. Switching language preserves the image and editing settings. Recent Chromium, Firefox, and Safari are the target browsers; automated verification currently uses Chromium.
 
 ## Tests
 
@@ -58,7 +58,7 @@ npx playwright install chromium
 npm test
 ```
 
-Tests exercise all scenes and algorithms, 1px/partial edge cells, image import, invalid measurements, DPR calibration, mobile layout, and lossless pixel equivalence of downloaded PNG files (including the fallback encoder).
+Tests exercise all scenes and algorithms, 1px/partial edge cells, image import, invalid measurements, DPR calibration, mobile layout, and lossless pixel equivalence of downloaded PNG files (including the fallback encoder). Locale tests also cover language persistence, translated errors and export messages, blocked local storage, unchanged pixels when switching languages, and narrow English layouts.
 
 ## License
 
